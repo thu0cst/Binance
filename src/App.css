@@ -1,0 +1,11 @@
+.page-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-wrapper {
+  padding-top: 80px;
+  height: 100%;
+  display: flex;
+}

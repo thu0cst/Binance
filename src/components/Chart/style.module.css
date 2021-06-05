@@ -1,0 +1,9 @@
+.chart_container {
+  margin: 0 auto;
+  padding: 8px;
+}
+
+.option_type_bar {
+  min-width: 200px;
+  margin-bottom: 16px;
+}

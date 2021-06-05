@@ -1,0 +1,17 @@
+.header {
+  height: 64px;
+  width: 100%;
+  background-color: rgb(18, 22, 28);
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.logo {
+  margin-left: 16px;
+  width: 200px;
+  cursor: pointer;
+}
