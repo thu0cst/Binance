@@ -8,4 +8,10 @@
   padding-top: 80px;
   height: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.option {
+  min-width: 200px;
 }

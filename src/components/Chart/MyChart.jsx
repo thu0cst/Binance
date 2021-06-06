@@ -36,7 +36,7 @@ export default function MyChart() {
   const { data: listPrices } = useQuery(
     ["listPrices", filter],
     () => getDataPrice(filter),
-    { refetchInterval: 1000, onSuccess: (data) => setData(data) }
+    { refetchInterval: 60000, onSuccess: (data) => setData(data) }
   );
   if (!listPrices) {
     return null;
@@ -95,7 +95,7 @@ export default function MyChart() {
     },
 
     title: {
-      text: "Fundamental Analysis of Stocks",
+      text: "Fundamental Analysis of Coin",
       align: "left",
     },
   };
@@ -111,21 +111,23 @@ export default function MyChart() {
       <Select
         onChange={handleChangeType}
         className={style.option_type_bar}
-        defaultValue={"line"}
+        defaultValue={"candlestick"}
       >
-        <Select.Option value="candlestick">candlestick</Select.Option>
+        <Select.Option value="candlestick">Candlestick</Select.Option>
         <Select.Option value="line">Line</Select.Option>
       </Select>
       {typeBar === "candlestick" && (
         <Chart
+          // @ts-ignore
           options={options}
           series={series}
           type="candlestick"
-          width={800}
+          width={700}
         />
       )}
       {typeBar === "line" && (
-        <Chart options={options} series={series} type="line" width={800} />
+        // @ts-ignore
+        <Chart options={options} series={series} type="line" width={700} />
       )}
     </div>
   );
