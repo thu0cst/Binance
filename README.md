@@ -1,4 +1,4 @@
-#Display binance with chart
+# Display binance with chart
 
 
 ## Source API and Socket
