@@ -9,6 +9,9 @@
 - Biểu đồ có 2 dạng: Biểu đồ đường, Biểu đồ nến
 - Biểu đồ hiển thị dữ liệu real time nhờ websocket
 
+## Demo
+[Video demo on Youtube](https://youtu.be/YcLzTQ9WjUQ)
+
 ## Source API and Socket
 
 Binance-api-postman
