@@ -1,4 +1,4 @@
-# Display binance with chart
+# Display binance (BTCUSDT) with chart
 
 ## Chức năng
 1. Lấy dữ liệu từ API, hiển thị trên biểu đồ
