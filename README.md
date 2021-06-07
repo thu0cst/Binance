@@ -10,7 +10,7 @@
 - Biểu đồ hiển thị dữ liệu real time nhờ websocket
 
 ## Demo
-[Video demo on Youtube](https://youtu.be/YcLzTQ9WjUQ)
+[Video demo on Youtube](https://youtu.be/AhegnrlV_q4)
 
 ## Source API and Socket
 
