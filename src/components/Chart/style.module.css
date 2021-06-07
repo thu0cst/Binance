@@ -7,3 +7,7 @@
   min-width: 200px;
   margin-bottom: 16px;
 }
+
+.option_type_bar:not(:first-child) {
+  margin-left: 16px;
+}

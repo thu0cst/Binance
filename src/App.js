@@ -7,7 +7,8 @@ import MyChart from "components/Chart/MyChart";
 
 import { QueryClientProvider, QueryClient } from "react-query";
 import WebSocket from "components/WebSocket/WebSocket";
-import { Select } from "antd";
+import { Select, Tabs } from "antd";
+const { TabPane } = Tabs;
 
 const client = new QueryClient({
   defaultOptions: {
@@ -18,13 +19,21 @@ const client = new QueryClient({
   },
 });
 function App() {
-  const [typeDisplay, setTypeDisplay] = useState(1);
+  const [typeDisplay, setTypeDisplay] = useState("1");
   return (
     <QueryClientProvider client={client}>
       <div className="page-wrapper">
         <HeaderApp />
         <div className="main-wrapper">
-          <Select
+          <Tabs defaultActiveKey="1" onChange={(key) => setTypeDisplay(key)}>
+            <TabPane tab="Call API" key="1">
+              {typeDisplay === "1" && <MyChart />}
+            </TabPane>
+            <TabPane tab="Web Socket" key="2">
+              {typeDisplay === "2" && <WebSocket />}
+            </TabPane>
+          </Tabs>
+          {/* <Select
             onChange={(value) => {
               // @ts-ignore
               setTypeDisplay(value);
@@ -36,7 +45,7 @@ function App() {
             <Select.Option value={2}>Use web socket</Select.Option>
           </Select>
           {typeDisplay === 1 && <MyChart />}
-          {typeDisplay === 2 && <WebSocket />}
+          {typeDisplay === 2 && <WebSocket />} */}
         </div>
       </div>
     </QueryClientProvider>

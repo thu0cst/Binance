@@ -1,4 +1,4 @@
-import { Select } from "antd";
+import { Select, Tabs } from "antd";
 import React, { useState } from "react";
 import Chart from "react-apexcharts";
 import style from "./style.module.css";
@@ -30,9 +30,7 @@ export default function MyChart() {
   });
 
   const [typeBar, setTypeBar] = useState("candlestick");
-  const handleChangeType = (value) => {
-    setTypeBar(value);
-  };
+
   const { data: listPrices } = useQuery(
     ["listPrices", filter],
     () => getDataPrice(filter),
@@ -106,16 +104,35 @@ export default function MyChart() {
     },
   ];
 
+  const handleChangeType = (value) => {
+    setTypeBar(value);
+  };
+
+  const handleChangeInterval = (value) => {
+    setFiler({ ...filter, interval: value });
+  };
+
   return (
     <div className={style.chart_container}>
-      <Select
-        onChange={handleChangeType}
-        className={style.option_type_bar}
-        defaultValue={"candlestick"}
-      >
-        <Select.Option value="candlestick">Candlestick</Select.Option>
-        <Select.Option value="line">Line</Select.Option>
-      </Select>
+      <div>
+        <Select
+          onChange={handleChangeType}
+          className={style.option_type_bar}
+          defaultValue={"candlestick"}
+        >
+          <Select.Option value="candlestick">Candlestick</Select.Option>
+          <Select.Option value="line">Line</Select.Option>
+        </Select>
+        <Select
+          onChange={handleChangeInterval}
+          className={style.option_type_bar}
+          defaultValue={"1m"}
+        >
+          <Select.Option value="1m">1 minute</Select.Option>
+          <Select.Option value="1h">1 hour</Select.Option>
+          <Select.Option value="1d">1 day</Select.Option>
+        </Select>
+      </div>
       {typeBar === "candlestick" && (
         <Chart
           // @ts-ignore
